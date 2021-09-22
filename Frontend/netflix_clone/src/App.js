@@ -1,7 +1,11 @@
+import Header from './Components/Header/Header'
+import MyList from './Components/MyList/MyList';
+
 function App() {
   return (
     <div>
-      <h1>Netflix</h1>
+      <Header/>
+      <MyList />
     </div>
   );
 }
