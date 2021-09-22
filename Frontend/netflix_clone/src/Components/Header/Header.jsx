@@ -18,16 +18,19 @@ function Header() {
           <a className="nav-link active text-white" aria-current="page" href="/">Home</a>
         </li>
         <li className="nav-item ">
-          <a className="nav-link  text-white" href="/">TV Shows</a>
+          <a className="nav-link  text-white" href="/">Movie</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link  text-white" href="/">Movies</a>
+          <a className="nav-link  text-white" href="/">Sports</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link  text-white" href="/">New & Popular</a>
+          <a className="nav-link  text-white" href="/">Kids</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link  text-white" href="/">My List</a>
+          <a className="nav-link  text-white" href="/">TV Show</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link  text-white" href="/">MyList</a>
         </li>
       </ul>
 
