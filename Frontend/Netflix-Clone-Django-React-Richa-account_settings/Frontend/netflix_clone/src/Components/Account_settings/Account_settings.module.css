@@ -1,0 +1,119 @@
+*{
+    background-color: #1b1b1b;
+}
+.header{
+    margin-top: 50px;
+    font-size: 25px;
+    color: white;
+    background-color: black;
+}
+
+.card{
+    width: 80px;
+    display: flex;
+    margin-left: 200px;
+    margin-top: 30px;
+    margin-bottom: -10px;
+    position: relative;
+    top: -10px;
+    background-color: #343434
+    ;
+    
+}
+.head5{
+    padding: 0px;
+    white-space: nowrap;
+    width: 0px;
+    position: relative;
+    top: 30px;
+    left: 10px;
+    color: white;
+}
+.head6{
+    padding: 0px;
+    white-space: nowrap;
+    width: 0px;
+    position: relative;
+    top: 30px;
+    left: 10px;
+    color: white;
+}
+.head7{
+    padding: 0px;
+    white-space: nowrap;
+    width: 0px;
+    position: relative;
+    top: 30px;
+    left: -190px;
+    color: white;
+}
+.head1{
+    position: relative;
+    left: 400px;
+    width: 0px;
+    color: white;
+}
+.head2{
+    position: relative;
+    left: 400px;
+    width: 0px;
+    white-space: nowrap;
+    color: white;
+}
+.star{
+    position: relative;
+    left: 500px;
+    top: -25px;
+    color: darkgrey;
+    width: 0px;
+}
+.head{
+    color: white;
+    position: relative;
+    width: 0px;
+    top: 30px;
+    margin-left: 20px;
+}
+.para{
+    width: 0px;
+    position: relative;
+    top: 70px;
+    color: honeydew;
+    
+   
+
+}
+.pass{
+    width: 0px;
+    color: grey;
+    white-space: nowrap;
+    position: relative;
+    left: 1000px;
+    top: -80px;
+}
+.list{
+    width: 0px;
+    white-space: nowrap;
+    list-style: none;
+    color: honeydew;
+    position: relative;
+    top: -30px;
+    left: 370px;
+    background-color: #343434;
+}
+.container{
+    background-color: black;
+    border-radius: 4px;
+    width: 1300px;
+    padding-left: 40px;
+    padding-top: -30px;
+    padding-bottom: 40px;
+    padding-right: 40px;
+    margin-top: 30px;
+    margin-left: 70px;
+}
+.container2{
+    height: 900px;
+    background-color: #343434;
+
+}
