@@ -6,7 +6,7 @@ class App_user_account(models.Model):
     '''
     This App_user_account model is made to make the different user accounts from main account
     '''
-    main_user = models.ForeignKey(User, on_delete=models.CASCADE)
+    main_user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='mainuser')
     app_user = models.CharField(max_length=50)
     app_profile_pic = models.ImageField(null=True, default=None)
 
