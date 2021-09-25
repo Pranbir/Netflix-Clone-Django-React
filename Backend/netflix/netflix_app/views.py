@@ -25,3 +25,5 @@ def latestshowlist(request):
     serializer = LatestShowSerializer(video , many=True)
     return Response(serializer.data)
 
+
+
