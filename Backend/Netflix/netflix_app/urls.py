@@ -1,10 +1,21 @@
+from . views import RegisterAPI
 from django.urls import path
-from .views import AppuserList, AppuserListDeatil,AppuserContinueWatching
+from knox import views as knox_views
+
+from .views import (
+                  index,
+                  AppuserList, 
+                  AppuserListDeatil,
+                  AppuserContinueWatching , 
+                  LoginAPI, 
+                  RegisterAPI )
 
 urlpatterns = [
-    # endpoints to view user based on login with edit del, view
+    path('', index, name='index'),
     path('app_user/', AppuserList.as_view(), name='userlist'),
     path('app_user/<int:pk>', AppuserListDeatil.as_view(), name='userlist-detail'),
-    #endpoints for user based continue watching
     path('app_user/<app_user>/continue_watching/', AppuserContinueWatching.as_view(), name='userlist-detail'),
-]
+    path('register/', RegisterAPI.as_view(), name='register'),
+    path('login/', LoginAPI.as_view(), name='login'),
+    path('logout/', knox_views.LogoutView.as_view(), name='logout'),
+    ]
