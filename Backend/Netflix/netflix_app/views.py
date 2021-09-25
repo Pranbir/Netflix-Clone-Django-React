@@ -1,19 +1,25 @@
+
 from django.contrib.auth.models import User
-from rest_framework import status, viewsets
-from rest_framework.decorators import action
 from rest_framework.response import Response
-from rest_framework import generics
-from netflix_app.models import App_user_account, App_user_lastwatchlist
-from netflix_app.serializers import App_user_accountSerializer , App_user_lastwatchlistSerializer
+from rest_framework import (generics,
+                            status, 
+                            viewsets,
+                           permissions)
+from netflix_app.models import (App_user_account, 
+                                App_user_lastwatchlist, 
+                                Video_data)
+from netflix_app.serializers import (
+                                    App_user_accountSerializer , 
+                                    App_user_lastwatchlistSerializer, 
+                                    SearchSerializer, UserSerializer, 
+                                    RegisterSerializer)
 from rest_framework.permissions import IsAuthenticated
 from django.http import HttpResponse
-from rest_framework import generics, permissions
 from django.contrib.auth import login
 from knox.models import AuthToken
-from rest_framework.response import Response
 from rest_framework.authtoken.serializers import AuthTokenSerializer
-from .serializers import UserSerializer, RegisterSerializer
 from knox.views import LoginView as KnoxLoginView
+from django_filters.rest_framework import DjangoFilterBackend
 
 
 class AppuserList(generics.ListCreateAPIView):
@@ -46,7 +52,14 @@ class AppuserContinueWatching (generics.ListAPIView):
 
 def index(request):
     return HttpResponse("Hello everyone! you are at netflix_app home page!!!")
-    
+
+  
+class SearchApi(generics.ListAPIView):
+    queryset = Video_data.objects.all()
+    serializer_class = SearchSerializer
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields =['title','category','director'] 
+
 
 class RegisterAPI(generics.GenericAPIView):
     serializer_class = RegisterSerializer
@@ -72,3 +85,4 @@ class LoginAPI(KnoxLoginView):
         return super(LoginAPI, self).post(request, format=None)
 
       
+

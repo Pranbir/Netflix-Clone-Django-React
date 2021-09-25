@@ -1,8 +1,15 @@
-from netflix_app.models import App_user_account
-from rest_framework import serializers
+from netflix_app.models import App_user_account , Video_data
+from rest_framework import fields, serializers
 from django.contrib.auth.models import User
 
 from netflix_app.models import App_user_account, App_user_lastwatchlist
+
+
+class SearchSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Video_data
+        #fields =['title','description','category','video_date','casting','director','video_link','video_gif']
+        fields ="__all__"
 
 
 class App_user_accountSerializer(serializers.ModelSerializer):
@@ -41,4 +48,5 @@ class RegisterSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         user = User.objects.create_user(validated_data['username'], validated_data['email'], validated_data['password'])
         return user
+
 
