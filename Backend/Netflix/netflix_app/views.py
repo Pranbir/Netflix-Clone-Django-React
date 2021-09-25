@@ -8,8 +8,8 @@ from netflix_app.serializers import App_user_accountSerializer , App_user_lastwa
 from rest_framework.permissions import IsAuthenticated
 
 
-class AppuserList(generics.ListAPIView):
-    # view to get all users under current logged in user
+class AppuserList(generics.ListCreateAPIView):
+    # view to get all users under current logged in user ListAPIView
     permission_classes = [IsAuthenticated]  
     queryset = App_user_account.objects.all()
     serializer_class = App_user_accountSerializer
