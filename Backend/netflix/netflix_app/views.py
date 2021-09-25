@@ -11,11 +11,6 @@ from rest_framework.response import Response
 from rest_framework import serializers, status
 
 
-@api_view(['GET'])
-def categorylist(request):
-    video = Video_category.objects.all()
-    serializer = VideoCategorySerializer(video , many=True)
-    return Response(serializer.data)
 
 
 
