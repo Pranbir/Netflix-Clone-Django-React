@@ -21,7 +21,11 @@ env = environ.Env(
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-environ.Env.read_env(BASE_DIR / 'Netflix' / '.env')
+if Path(BASE_DIR / 'Netflix' / '.env').exists():
+    environ.Env.read_env(BASE_DIR / 'Netflix' / '.env')
+else:
+    environ.Env.read_env(BASE_DIR / 'Netflix' / '.tempenv')
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
