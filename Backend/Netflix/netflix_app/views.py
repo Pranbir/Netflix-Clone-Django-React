@@ -1,18 +1,20 @@
 
 from django.contrib.auth.models import User
+from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
 from rest_framework import (generics,
                             status, 
-                            viewsets,
                            permissions)
 from netflix_app.models import (App_user_account, 
                                 App_user_lastwatchlist, 
-                                Video_data)
+                                Video_data,
+                                Video_category)
 from netflix_app.serializers import (
                                     App_user_accountSerializer , 
                                     App_user_lastwatchlistSerializer, 
                                     SearchSerializer, UserSerializer, 
-                                    RegisterSerializer)
+                                    RegisterSerializer,
+                                    VideoDataSerializer)
 from rest_framework.permissions import IsAuthenticated
 from django.http import HttpResponse
 from django.contrib.auth import login
@@ -20,6 +22,10 @@ from knox.models import AuthToken
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from knox.views import LoginView as KnoxLoginView
 from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import routers, serializers, viewsets
+from rest_framework import filters
+import django_filters.rest_framework
+
 
 
 class AppuserList(generics.ListCreateAPIView):
@@ -85,4 +91,16 @@ class LoginAPI(KnoxLoginView):
         return super(LoginAPI, self).post(request, format=None)
 
       
+#latest show api
+class LatestShows(generics.ListAPIView):
+    queryset = Video_data.objects.all()
+    serializer_class = VideoDataSerializer
+    #permission_classes = [IsAdminUser]
+
+
+
+
+   
+
+
 

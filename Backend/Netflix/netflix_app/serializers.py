@@ -1,8 +1,9 @@
+from django.db import models
 from netflix_app.models import App_user_account , Video_data
 from rest_framework import fields, serializers
 from django.contrib.auth.models import User
 
-from netflix_app.models import App_user_account, App_user_lastwatchlist
+from netflix_app.models import App_user_account, App_user_lastwatchlist , Video_data ,Video_category
 
 
 class SearchSerializer(serializers.ModelSerializer):
@@ -50,3 +51,10 @@ class RegisterSerializer(serializers.ModelSerializer):
         return user
 
 
+#Latest Shows Serializer
+class VideoDataSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Video_data
+        fields ="__all__"
+
+    
