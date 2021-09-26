@@ -9,12 +9,22 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import django_heroku
+import environ
 from pathlib import Path
+
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False)
+)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+if Path(BASE_DIR / 'Netflix' / '.env').exists():
+    environ.Env.read_env(BASE_DIR / 'Netflix' / '.env')
+else:
+    environ.Env.read_env(BASE_DIR / 'Netflix' / '.tempenv')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -23,10 +33,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = ')@16#=@a=csw5ahw7+u3#bx-mo4ifj%x1*_1%bc00xf=&9sc%!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = []
+DEBUG = True if env('APP_DEBUG') == "True" else False
 
+if DEBUG:
+    ALLOWED_HOSTS = ['*']
+else:
+    ALLOWED_HOSTS = ['fsd-feb-netflix-api.herokuapp.com']
 
 # Application definition
 
@@ -37,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "django_filters",
     'netflix_app',
     'rest_framework',
     'rest_framework.authtoken',
@@ -88,13 +102,24 @@ REST_FRAMEWORK = {
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+            }
+        }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': env('NAME'),
+            'USER': env('USER'),
+            'PASSWORD': env('PASSWORD'),
+            'HOST': env('HOST'),
+            'PORT': env('PORT'),
+            }
+        }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -135,3 +160,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/Upload/'
 MEDIA_ROOT = BASE_DIR / 'Upload'
+
+
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())

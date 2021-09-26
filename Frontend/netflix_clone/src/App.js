@@ -1,7 +1,9 @@
+import HomePage from "../src/pages/HomePage";
+
 function App() {
   return (
     <div>
-      <h1>Netflix</h1>
+      <HomePage />
     </div>
   );
 }
