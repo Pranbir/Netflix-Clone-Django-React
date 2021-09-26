@@ -1,12 +1,14 @@
-import Header from './Components/Header/Header'
-import MyList from './Components/MyList/MyList';
+import Header from "./Components/Header/Header";
+import React from "react";
+import MyList from "./Components/MyList/MyList";
+
 
 function App() {
   return (
-    <div>
-      <Header/>
-      <MyList />
-    </div>
+    <>
+    <MyList/>
+    <Header/>
+    </>
   );
 }
 

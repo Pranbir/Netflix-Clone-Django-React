@@ -2,7 +2,7 @@ import assests from './assests/logo.jpg';
 import styles from './Header.module.css'
 function Header() {
     return (
-      <div className="header" >
+      <div className={styles.Header} >
        <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
     

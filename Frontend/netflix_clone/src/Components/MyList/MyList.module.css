@@ -1,15 +1,22 @@
+.myList{
+	position: relative;
+}
+
+
 .tex{
+	position: absolute;
     color: white;
     margin-left: -200px;
+	margin-top: -210px;
 }
 .row{
     margin-left: -200px;
-    margin-top: 30px;
+    margin-top: 300px;
 }
 .buttonwatchlist{
     position: absolute;
     margin-left: -120px;
-    margin-top: 15px;
+    margin-top: 85px;
     background-color: grey;
 	border-radius:28px;
 	border:1px solid black;
@@ -23,7 +30,7 @@
 .buttonfav{
     position: absolute;
     margin-left: 11px;
-    margin-top: 15px;
+    margin-top: 85px;
     background-color: grey;
 	border-radius:28px;
 	border:1px solid black;
