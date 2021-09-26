@@ -41,7 +41,10 @@ return (
                 <h4 className={styles.tex}>Watchlist</h4>
                 <div className={styles.row}>
                     <div className="row mt-4">
-                        
+                     <div className="movie-container">{movies.length > 0 && 
+                          movies.map((movie) => <Movie key={movie.id} {...movie} />
+                          )}
+                     </div>   
                     </div>
                 </div>
             </div>
@@ -52,7 +55,10 @@ return (
 
                 <div className={styles.row}>
                     <div className="row mt-4">
-                        
+                        <div className="movie-container">{movies.length > 0 && 
+                              movies.map((movie) => <Movie key={movie.id} {...movie} />
+                              )}
+                         </div>
                         
                     </div>
                 </div>
@@ -61,10 +67,6 @@ return (
   </div>
 </div>
   </div></div>
-  <div className="movie-container">{movies.length > 0 && 
-      movies.map((movie) => <Movie key={movie.id} {...movie} />
-      )}
-      </div>
 
     </>
   );
