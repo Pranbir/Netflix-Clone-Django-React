@@ -2,12 +2,16 @@ from django.urls import path
 from knox import views as knox_views
 from .views import (
                   index,
+                  
                   AppuserList, 
                   AppuserListDeatil,
                   AppuserContinueWatching , 
                   LoginAPI, 
                   RegisterAPI,
-                  SearchApi)
+                  SearchApi,
+                  LatestShows,
+                  
+                  )
 
 urlpatterns = [
     path('', index, name='index'),
@@ -18,5 +22,7 @@ urlpatterns = [
     path('login/', LoginAPI.as_view(), name='login'),
     path('logout/', knox_views.LogoutView.as_view(), name='logout'),
     path('searchAPI',SearchApi.as_view(),name="SearchApi"),
+    path('latest_show/',LatestShows.as_view(),name="LatestApi")
+    
     ]
 
