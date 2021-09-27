@@ -24,12 +24,15 @@ class App_user_accountSerializer(serializers.ModelSerializer):
  
 class App_user_lastwatchlistSerializer(serializers.ModelSerializer):
     app_user = serializers.StringRelatedField(read_only=True)
-    video_watchlist = serializers.StringRelatedField(read_only=True)
+    video_watchlist__title = serializers.StringRelatedField(read_only=True)
+    video_watchlist__id = serializers.IntegerField(read_only=True)
+    video_watchlist__video_gif = serializers.URLField(read_only=True)
 
     class Meta:
         model = App_user_lastwatchlist
         #exclude = ['anyfeildifrequired']
-        fields = "__all__"
+        fields = ['app_user','video_watchlist__title','video_watchlist__id', 'video_watchlist__video_gif']
+    
 
 
 # User Serializer
