@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'drf_yasg',
     "django_filters",
     'netflix_app',
     'rest_framework',
@@ -176,6 +177,16 @@ if not DEBUG:
 STATIC_URL = '/static/'
 MEDIA_URL = '/Upload/'
 MEDIA_ROOT = BASE_DIR / 'Upload'
+
+SWAGGER_SETTINGS = {
+   'SECURITY_DEFINITIONS': {
+      'Token': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
+      }
+   }
+}
 
 
 
