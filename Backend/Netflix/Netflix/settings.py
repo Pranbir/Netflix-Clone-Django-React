@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'drf_yasg',
     "django_filters",
+    'debug_toolbar',
     'netflix_app',
     'rest_framework',
     'rest_framework.authtoken',
@@ -72,6 +73,7 @@ if DEBUG:
         'django.contrib.auth.middleware.AuthenticationMiddleware',
         'django.contrib.messages.middleware.MessageMiddleware',
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
+        'debug_toolbar.middleware.DebugToolbarMiddleware',
     ]
 else:
     MIDDLEWARE = [
@@ -237,6 +239,12 @@ LOGGING = {
         },
     }
 }
+
+INTERNAL_IPS = [
+    # ...
+    '127.0.0.1',
+    # ...
+]
 
 
 # Activate Django-Heroku.

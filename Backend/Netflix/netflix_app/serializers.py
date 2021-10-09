@@ -56,8 +56,21 @@ class RegisterSerializer(serializers.ModelSerializer):
 
 #Latest Shows Serializer
 class VideoDataSerializer(serializers.ModelSerializer):
+    id= serializers.IntegerField(read_only=True)
+    title= serializers.StringRelatedField(read_only=True)
+    description= serializers.StringRelatedField(read_only=True)
+    video_date= serializers.StringRelatedField(read_only=True)
+    casting= serializers.StringRelatedField(read_only=True)
+    director= serializers.StringRelatedField(read_only=True)
+    video_link= serializers.URLField(read_only=True)
+    video_gif= serializers.URLField(read_only=True)
+    category__id= serializers.IntegerField(read_only=True)
+    category__category= serializers.StringRelatedField(read_only=True)
+
     class Meta:
         model = Video_data
-        fields ="__all__"
+        #fields ="__all__"
+        fields = ['id','title','description', 'video_date', 'casting', 'director', 'video_link', 'video_gif','category__id', 'category__category']
+    
 
     

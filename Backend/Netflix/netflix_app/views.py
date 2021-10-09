@@ -101,7 +101,7 @@ class LoginAPI(KnoxLoginView):
 class LatestShows(generics.ListAPIView):
     authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticated,)
-    queryset = Video_data.objects.all()
+    queryset = Video_data.objects.select_related('category').order_by('-id').values('id','title','description', 'video_date', 'casting', 'director', 'video_link', 'video_gif','category__id', 'category__category')
     serializer_class = VideoDataSerializer
     pagination_class = LatestShowsPagination
     #permission_classes = [IsAdminUser]
