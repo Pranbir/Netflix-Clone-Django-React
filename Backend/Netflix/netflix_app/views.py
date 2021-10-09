@@ -24,6 +24,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters
 from knox.auth import TokenAuthentication
 from .permissions import IsAppUserOwnerLoggedIn
+from .pagination import LatestShowsPagination
 
 
 
@@ -67,7 +68,7 @@ class SearchApi(generics.ListAPIView):
     permission_classes = (IsAuthenticated,)
     queryset = Video_data.objects.all()
     serializer_class = SearchSerializer
-    filter_backends = [DjangoFilterBackend]
+    filter_backends = [filters.SearchFilter]
     filterset_fields =['title','category','director'] 
 
 
@@ -102,6 +103,7 @@ class LatestShows(generics.ListAPIView):
     permission_classes = (IsAuthenticated,)
     queryset = Video_data.objects.all()
     serializer_class = VideoDataSerializer
+    pagination_class = LatestShowsPagination
     #permission_classes = [IsAdminUser]
 
 
