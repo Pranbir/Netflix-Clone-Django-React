@@ -2,7 +2,6 @@ from django.urls import path
 from knox import views as knox_views
 from .views import (
                   index,
-                  
                   AppuserList, 
                   AppuserListDeatil,
                   AppuserContinueWatching , 
@@ -10,7 +9,6 @@ from .views import (
                   RegisterAPI,
                   SearchApi,
                   LatestShows,
-                  
                   )
 
 urlpatterns = [
