@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import django_heroku
 import environ
 from pathlib import Path
+import socket
 
 env = environ.Env(
     # set casting, default value
@@ -34,12 +35,18 @@ SECRET_KEY = ')@16#=@a=csw5ahw7+u3#bx-mo4ifj%x1*_1%bc00xf=&9sc%!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = True if env('APP_DEBUG') == "True" else False
+#DEBUG = True if env('APP_DEBUG') == "True" else False
+
+if 'heroku' in socket.gethostbyaddr(socket.gethostname())[0]: # Other domains can be added like this
+    DEBUG = False
+else:
+    DEBUG = True
+
 
 if DEBUG:
     ALLOWED_HOSTS = ['*']
 else:
-    ALLOWED_HOSTS = ['fsd-feb-netflix-api.herokuapp.com']
+    ALLOWED_HOSTS = ['.herokuapp.com']
 
 # Application definition
 
