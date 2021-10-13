@@ -147,6 +147,7 @@ Backend/Netflix/venv/
 ENV/
 env.bak/
 venv.bak/
+Backend/Netflix/.env
 
 # Spyder project settings
 .spyderproject

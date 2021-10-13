@@ -13,6 +13,7 @@
 .lang-select-wrapper::before {
   content: "";
   background: url(../../Components/Assests/globe.png) no-repeat center center;
+  background: url(../../assets/globe.png) no-repeat center center;
   width: 19px;
   height: 17px;
   display: block;
@@ -154,6 +155,7 @@ form .form-main .signup-btn {
   width: 100%;
   height: 105vh;
   background: url(../../Components/Assests/background.jpg) no-repeat center center/cover;
+  background: url(../../assets/background.jpg) no-repeat center center/cover;
 }
 
 .header-container::after {

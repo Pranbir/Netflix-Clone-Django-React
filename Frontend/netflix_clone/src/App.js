@@ -13,6 +13,13 @@ function App() {
       <Route exact path="/" component={HomePage} />
     </BrowserRouter>
     </>
+import HomePage from "../src/pages/HomePage";
+
+function App() {
+  return (
+    <div>
+      <HomePage />
+    </div>
   );
 }
 
