@@ -55,7 +55,7 @@ export default function LatestShow() {
     }, [page]);
 
     const getMoviesInfo = async (page = 1) => {
-        const res = await fetch(`http://fsd-feb-netflix-api.herokuapp.com/api/latest_show/?page=${page}`, {
+        const res = await fetch(`https://fsd-feb-netflix-api.herokuapp.com/api/latest_show/?page=${page}`, {
             headers: {
                 Authorization: 'Token ' + token
             },

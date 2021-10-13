@@ -180,6 +180,7 @@ logs
 
 Frontend/node_modules
 Frontend/netflix_clone/node_modules
+Frontend/netflix_clone/build
 bower_components
 
 *.sublime*
