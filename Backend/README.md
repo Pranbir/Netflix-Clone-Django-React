@@ -1,1 +1,0 @@
-# Netflix-Clone-Backend using Django and DRF
