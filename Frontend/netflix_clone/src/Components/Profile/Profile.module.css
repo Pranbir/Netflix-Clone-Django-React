@@ -1,0 +1,22 @@
+.imgfield{
+  padding: 10px;
+  cursor: pointer;
+}
+
+.butnclass{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.imgField2{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pBtn{
+  margin-top: 30px;
+  margin-bottom: 20px;
+  display: flex;
+}
