@@ -46,12 +46,12 @@ export default function Login() {
                 <form className="container form_bdy w-50" onSubmit={submit}>
                     <h2 className="text-white">Sign in</h2>
                     <div className="form-group mt-5">
-                        <input type="text" className="form-control inp_s" placeholder="Enter Username" required
+                        <input type="text" className="form-control inp_s" placeholder="mukul07" required
                             onChange={e => setUsername(e.target.value)}
                         />
                     </div>
                     <div className="form-group mt-4">
-                        <input type="password" className="form-control inp_s" placeholder="Enter Password" required
+                        <input type="password" className="form-control inp_s" placeholder="68585@mM" required
                             onChange={e => setPassword(e.target.value)}
                         />
                     </div>
