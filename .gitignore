@@ -179,6 +179,7 @@ logs
 **/*.back.*
 
 Frontend/node_modules
+Frontend/netflix_clone/node_modules
 bower_components
 
 *.sublime*
