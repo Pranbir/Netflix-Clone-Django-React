@@ -42,8 +42,8 @@ export default function Login() {
             <div>
                 <img src={logo} className="logo_s" alt="logo" />
             </div>
-            <div className="container w-75 ">
-                <form className="container form_bdy w-50" onSubmit={submit}>
+            <div className="container">
+                <form className="form_bdy" onSubmit={submit}>
                     <h2 className="text-white">Sign in</h2>
                     <div className="form-group mt-5">
                         <input type="text" className="form-control inp_s" placeholder="mukul07" required
