@@ -7,32 +7,48 @@
   position: absolute;
   height: 100%;
   width: 100%;
-}   
+}
 
-.logo_s{
-    height: 40px;
-    margin-top: 20px;
-    margin-left: 20px;
+.logo_s {
+  height: 40px;
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
 .form_bdy {
   margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
   border: 1px solid black;
   padding: 50px;
-  background: rgba(0, 0, 0, 0.8)
+  width: 50%;
+  background: rgba(0, 0, 0, 0.8);
 }
 
-.inp_s{
-    height: 45px;
+.inp_s {
+  height: 45px;
 }
 
-.bt_c{
-    background-color: red;
-    color: white;
-    font-weight: bold;
-    font-size: 17px;
+.bt_c {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  font-size: 17px;
 }
 
+@media screen and (max-width: 600px) {
+  .form_bdy {
+    width: 100%;
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .inp_s,
+  .bt_c {
+    width: 100%;
+    margin-top: 0px;
+  }
+}
 /* Styling for admin.jsx */
 
 .overlay {
@@ -46,7 +62,7 @@
   width: 70%;
   height: 100%;
   transform: scale(0);
-  transition: .3s ease;
+  transition: 0.3s ease;
 }
 
 .movie_st:hover .overlay {
@@ -70,7 +86,7 @@
   width: 70%;
   height: 100%;
   transform: scale(0);
-  transition: .3s ease;
+  transition: 0.3s ease;
 }
 
 .movie_st1:hover .overlay1 {
@@ -82,4 +98,3 @@
   font-size: 15px;
   position: absolute;
 }
-
